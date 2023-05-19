@@ -19,7 +19,7 @@ const cartInDB = ref(database, "myCart")
  const inputFieldEl=document.getElementById("input-field")
  const addButtonEl=document.getElementById("add-button")
    const orderListEl=document.getElementById("order-list")
-   listItems=""
+   let listItems="";
  addButtonEl.addEventListener("click",function(){
     let inputValue=inputFieldEl.value
     push(cartInDB,inputValue)
