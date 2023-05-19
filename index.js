@@ -26,4 +26,4 @@ const cartInDB = ref(database, "myCart")
         listItems += `<li>${inputValue}</li>`
  })
  orderListEl.innerHTML = listItems
- console.log(listItems)
+ console.log(listItems+"ggg")
