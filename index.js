@@ -25,4 +25,4 @@ const cartInDB = ref(database, "myCart")
     push(cartInDB,inputValue)
         listItems += `<li>${inputValue}</li>`
  })
- orderListEl.innerHTML += listItems
+ orderListEl.innerHTML = listItems
