@@ -20,8 +20,8 @@ const cartInDB = ref(database, "myCart")
  const addButtonEl=document.getElementById("add-button")
    const orderListEl=document.getElementById("order-list")
 
-   onValue(cartInDB,function(snapShot){
-      let listItem=Object.values(snapShot.val())
+   onValue(cartInDB,function(snapshot){
+      let listItem=Object.values(snapshot.val())
       //clearInputFieldEl
       for (i=0; i<listItem.length; i++)
       {
