@@ -22,7 +22,7 @@ const cartInDB = ref(database, "myCart")
 
    onValue(cartInDB,function(snapshot){
       let listItem=Object.values(snapshot.val())
-      clearInputFieldEl
+     
       for (let i=0; i<listItem.length; i++)
       {
          let currentBook=listItem[i]
@@ -33,6 +33,7 @@ const cartInDB = ref(database, "myCart")
  addButtonEl.addEventListener("click",function(){ 
     let inputValue=inputFieldEl.value
     push(cartInDB,inputValue)
+    clearInputFieldEl()
     inputValue.value=""
     loadListValue(inputValue)
  })
