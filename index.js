@@ -34,7 +34,7 @@ const cartInDB = ref(database, "myCart")
     let inputValue=inputFieldEl.value
     push(cartInDB,inputValue)
     clearInputFieldEl()
-    inputValue.value=""
+    inputFieldEl.value=""
     loadListValue(inputValue)
  })
  
