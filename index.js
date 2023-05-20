@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 
-import { getDatabase, ref, push, onvalue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
 const appSettings = {
@@ -20,7 +20,7 @@ const cartInDB = ref(database, "myCart")
  const addButtonEl=document.getElementById("add-button")
    const orderListEl=document.getElementById("order-list")
 
-   onvalue(cartInDB,function(snapShot){
+   onValue(cartInDB,function(snapShot){
       let listItem=Object.values(snapShot.val())
       //clearInputFieldEl
       for (i=0; i<listItem.length; i++)
