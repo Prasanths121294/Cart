@@ -19,7 +19,7 @@ const cartInDB = ref(database, "myCart")
  const inputFieldEl=document.getElementById("input-field")
  const addButtonEl=document.getElementById("add-button")
    const orderListEl=document.getElementById("order-list")
-
+   console.log("test")
    onValue(cartInDB,function(snapshot){
       let listItem=Object.values(snapshot.val())
       clearShoppingListEl()
