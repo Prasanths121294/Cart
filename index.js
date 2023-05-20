@@ -22,7 +22,7 @@ const cartInDB = ref(database, "myCart")
 
    onValue(cartInDB,function(snapshot){
       let listItem=Object.values(snapshot.val())
-      clearShoppingListEl()
+      //clearShoppingListEl()
       for (let i=0; i<listItem.length; i++)
       {
          let currentBook=listItem[i]
