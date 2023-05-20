@@ -42,5 +42,5 @@ const cartInDB = ref(database, "myCart")
  }
 
  function loadListValue(inputval){
-   orderListEl.innerHTML += `<li>${inputValue}</li>`
+   orderListEl.innerHTML += `<li>${inputval}</li>`
  }
