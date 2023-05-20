@@ -39,7 +39,7 @@ const cartInDB = ref(database, "myCart")
  })
  
  function clearInputFieldEl(){
-   orderListEl.value=""
+   orderListEl.innerHTML=""
  }
 
  function loadListValue(inputval){
