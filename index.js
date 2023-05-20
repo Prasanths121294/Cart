@@ -23,7 +23,7 @@ const cartInDB = ref(database, "myCart")
    onValue(cartInDB,function(snapshot){
       let listItem=Object.values(snapshot.val())
       //clearInputFieldEl
-      for (i=0; i<listItem.length; i++)
+      for (let i=0; i<listItem.length; i++)
       {
          let currentBook=listItem[i]
          loadListValue(currentBook)
