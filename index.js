@@ -20,6 +20,8 @@
    
              onValue(cartInDB,function(snapshot){
             let listItem=Object.entries(snapshot.val())
+            if(snapshot.exists())
+            {
             clearShoppingListEl()
             for (let i=0; i<listItem.length; i++)
             {
@@ -29,6 +31,10 @@
                let currenItemId=currentItem[0]
                loadListValue(currentItem)
             }
+         }
+         else{
+            orderListEl.innerHTML = "No items here..."
+         }
          })
       
    addButtonEl.addEventListener("click",function(){ 
