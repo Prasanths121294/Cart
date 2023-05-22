@@ -2,7 +2,7 @@
 
    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
 
-   import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+         import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
    const appSettings = {
@@ -14,20 +14,20 @@
    const database = getDatabase(app)
    const cartInDB = ref(database, "myCart")
 
-   
-   
    const inputFieldEl=document.getElementById("input-field")
    const addButtonEl=document.getElementById("add-button")
       const orderListEl=document.getElementById("order-list")
    
-   onValue(cartInDB,function(snapshot){
-            let listItem=Object.values(snapshot.val())
+             onValue(cartInDB,function(snapshot){
+            let listItem=Object.entries(snapshot.val())
             clearShoppingListEl()
             for (let i=0; i<listItem.length; i++)
             {
-            
-               let currentBook=listItem[i]
-               loadListValue(currentBook)
+               let currentItem=listItem[i]
+
+               let currenItemName=currentItem[1]
+               let currenItemId=currentItem[0]
+               loadListValue(currentItem)
             }
          })
       
@@ -48,5 +48,16 @@
    }
 
    function loadListValue(inputval){
-      orderListEl.innerHTML += `<li>${inputval}</li>`
+     let itemName=inputval[1]
+     let itemId=inputval[0]
+     let newEl=document.createElement("li")
+     
+     orderListEl.append(newEl)
+
+     newEl.addEventListener("click",function(){
+      let deltItem=ref(database,`myCart/${itemId}`)
+      remove(deltItem)
+     })
+     newEl.textContent=itemName
    }
+
