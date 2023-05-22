@@ -19,10 +19,12 @@
       const orderListEl=document.getElementById("order-list")
    
              onValue(cartInDB,function(snapshot){
-            let listItem=Object.entries(snapshot.val())
+            
             if(snapshot.exists())
             {
+               let listItem=Object.entries(snapshot.val())
             clearShoppingListEl()
+            
             for (let i=0; i<listItem.length; i++)
             {
                let currentItem=listItem[i]
