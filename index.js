@@ -18,7 +18,7 @@
                if(snapshot.exists())
                {
                   let listItem=Object.entries(snapshot.val())
-                  console.log(listItem +"1")
+                  
                   clearShoppingListEl()
                      for (let i=0; i<listItem.length; i++)
                      {
@@ -59,7 +59,7 @@
                
                newEl.addEventListener("click",function(){
                  
-                  let deltItem=ref(database,`myCart/${itemId}`)
+                  let deltItem=ref(database,`myCart/-NW6e-y57m-3YqfyglI3`)
                   
                   remove(deltItem)
                })
