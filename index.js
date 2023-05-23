@@ -59,7 +59,7 @@
                
 
                newEl.addEventListener("click",function(){
-            
+                  let a = itemId;
                  let deltItem=ref(database,`myCart/${itemId}`)
                   console.log(itemId);
                   remove(deltItem)
