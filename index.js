@@ -58,9 +58,12 @@
                
                console.log(JSON.stringify(newEl)+"---3")
                newEl.addEventListener("click",function(){
+                  console.log(itemId);
+                  console.log(itemName);
+                  console.log(newEl.itemName,newEl.itemId);
                   let deltItem=ref(database,`myCart/${itemId}`)
                   console.log(itemName+"---delt")
-                  //remove(deltItem)
+                  remove(deltItem)
                })
                orderListEl.append(newEl)
          }
