@@ -57,7 +57,9 @@
                newEl.textContent=itemName
                console.log(inputval)
                console.log(itemId)
-               
+            let test=   Object.entries(newEl.val())
+            console.log(test+"new")
+                  
                newEl.addEventListener("click",function(){
                   console.log("2222222222222222222222"+itemId)
                   console.log(parseInt(newEl)+"--1")
