@@ -14,7 +14,7 @@
       const orderListEl=document.getElementById("order-list")
 //---------------------------------------
          onValue(cartInDB,function(snapshot){
-            
+            console.log(snapshot.val()+"----clo")
                if(snapshot.exists())
                {
                   let listItem=Object.entries(snapshot.val())
