@@ -53,17 +53,16 @@
          function loadListValue(inputval){
             
                let itemName=inputval
-               //let itemId=inputval[0]
+               let itemId=inputval[0]
                let newEl=document.createElement("li")
                newEl.textContent=itemName
-               console.log(inputval)
-               //console.log(itemId)
+               
 
                newEl.addEventListener("click",function(){
             
-                 // let deltItem=ref(database,`myCart/${itemId}`)
+                 let deltItem=ref(database,`myCart/${itemId}`)
                   
-                  //remove(deltItem)
+                  remove(deltItem)
                })
                orderListEl.append(newEl)
          }
