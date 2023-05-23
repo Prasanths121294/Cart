@@ -52,7 +52,7 @@
 //--------------------------------------------------------------------
          function loadListValue(inputval){
             
-               let itemName=inputval
+               let itemName=inputval[1]
                let itemId=inputval[0]
                let newEl=document.createElement("li")
                newEl.textContent=itemName
