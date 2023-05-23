@@ -13,33 +13,31 @@
       const addButtonEl=document.getElementById("add-button")
       const orderListEl=document.getElementById("order-list")
 //---------------------------------------
-         // onValue(cartInDB,function(snapshot){
-         //    console.log(snapshot.val()+"----clo")
-         //       if(snapshot.exists())
-         //       {
-         //          let listItem=Object.entries(snapshot.val())
-         //          console.log(listItem +"1")
-         //          clearShoppingListEl()
-         //             for (let i=0; i<listItem.length; i++)
-         //             {
-         //                let currentItem=listItem[i]
+         onValue(cartInDB,function(snapshot){
+            
+               if(snapshot.exists())
+               {
+                  let listItem=Object.entries(snapshot.val())
+                  console.log(listItem +"1")
+                  clearShoppingListEl()
+                     for (let i=0; i<listItem.length; i++)
+                     {
+                        let currentItem=listItem[i]
 
-         //                let currenItemName=currentItem[1]
-         //                let currenItemId=currentItem[0]
-         //                loadListValue(currentItem)
-         //             }
-         //       }
-         //       else{
-         //             orderListEl.innerHTML = "No items here..."
-         //       }
-         // })
+                        let currenItemName=currentItem[1]
+                        let currenItemId=currentItem[0]
+                        loadListValue(currentItem)
+                     }
+               }
+               else{
+                     orderListEl.innerHTML = "No items here..."
+               }
+         })
 //---------------------------------------------------------------------
          addButtonEl.addEventListener("click",function(){ 
                let inputValue=inputFieldEl.value
                push(cartInDB,inputValue)
-               loadListValue(inputValue)
                clearInputFieldEl()
-
          
          })
 //--------------------------------------------------------------------- 
@@ -52,19 +50,17 @@
          }
 //--------------------------------------------------------------------
          function loadListValue(inputval){
-            console.log(inputval+"2")
+            
                let itemName=inputval[1]
                let itemId=inputval[0]
                let newEl=document.createElement("li")
                newEl.textContent=itemName
                
-               console.log(JSON.stringify(newEl)+"---3")
+               
                newEl.addEventListener("click",function(){
-                  console.log(itemId);
-                  console.log(itemName);
-                  console.log(newEl.itemName,newEl.itemId);
+                 
                   let deltItem=ref(database,`myCart/${itemId}`)
-                  console.log(itemName+"---delt")
+                  
                   remove(deltItem)
                })
                orderListEl.append(newEl)
