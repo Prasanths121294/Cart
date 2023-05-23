@@ -61,7 +61,7 @@
                newEl.addEventListener("click",function(){
             
                  let deltItem=ref(database,`myCart/${itemId}`)
-                  
+                  console.log(itemId);
                   remove(deltItem)
                })
                orderListEl.append(newEl)
