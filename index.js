@@ -59,7 +59,7 @@
                console.log(itemId)
                
                newEl.addEventListener("click",function(){
-                  console.log(JSON.stringify(newEl)+"--1")
+                  console.log("2222222222222222222222"+itemId)
                   console.log(parseInt(newEl)+"--1")
                   let deltItem=ref(database,`myCart/${itemId}`)
                   
