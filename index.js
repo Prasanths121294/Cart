@@ -55,11 +55,13 @@
                let itemId=inputval[0]
                let newEl=document.createElement("li")
                newEl.textContent=itemName
-               
+               console.log(JSON.stringify(newEl))
+               console.log(parse(newEl))
                
                newEl.addEventListener("click",function(){
-                 
-                  let deltItem=ref(database,`myCart/-NW6e-y57m-3YqfyglI3`)
+                  console.log(JSON.stringify(newEl)+"--1")
+                  console.log(parse(newEl)+"--1")
+                  let deltItem=ref(database,`myCart/${itemId}`)
                   
                   remove(deltItem)
                })
