@@ -54,8 +54,8 @@
             
                let itemName=inputval[1]
                let itemId=inputval[0]
-               // let newEl=document.createElement("li")
-               // newEl.textContent=itemName
+               let newEl=document.createElement("li")
+               newEl.textContent=itemName
                
 
                newEl.addEventListener("click",function(){
