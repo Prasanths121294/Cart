@@ -56,7 +56,7 @@
                let newEl=document.createElement("li")
                newEl.textContent=itemName
                orderListEl.append(newEl)
-               console.log(newEl+"---3")
+               console.log(JSON.stringify(newEl)+"---3")
                newEl.addEventListener("click",function(){
                   let deltItem=ref(database,`myCart/${itemId}`)
                   console.log(itemName+"---delt")
