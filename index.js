@@ -13,31 +13,33 @@
       const addButtonEl=document.getElementById("add-button")
       const orderListEl=document.getElementById("order-list")
 //---------------------------------------
-         onValue(cartInDB,function(snapshot){
-            console.log(snapshot.val()+"----clo")
-               if(snapshot.exists())
-               {
-                  let listItem=Object.entries(snapshot.val())
-                  console.log(listItem +"1")
-                  clearShoppingListEl()
-                     for (let i=0; i<listItem.length; i++)
-                     {
-                        let currentItem=listItem[i]
+         // onValue(cartInDB,function(snapshot){
+         //    console.log(snapshot.val()+"----clo")
+         //       if(snapshot.exists())
+         //       {
+         //          let listItem=Object.entries(snapshot.val())
+         //          console.log(listItem +"1")
+         //          clearShoppingListEl()
+         //             for (let i=0; i<listItem.length; i++)
+         //             {
+         //                let currentItem=listItem[i]
 
-                        let currenItemName=currentItem[1]
-                        let currenItemId=currentItem[0]
-                        loadListValue(currentItem)
-                     }
-               }
-               else{
-                     orderListEl.innerHTML = "No items here..."
-               }
-         })
+         //                let currenItemName=currentItem[1]
+         //                let currenItemId=currentItem[0]
+         //                loadListValue(currentItem)
+         //             }
+         //       }
+         //       else{
+         //             orderListEl.innerHTML = "No items here..."
+         //       }
+         // })
 //---------------------------------------------------------------------
          addButtonEl.addEventListener("click",function(){ 
                let inputValue=inputFieldEl.value
                push(cartInDB,inputValue)
+               loadListValue(inputValue)
                clearInputFieldEl()
+
          
          })
 //--------------------------------------------------------------------- 
