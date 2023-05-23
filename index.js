@@ -55,8 +55,8 @@
                let itemId=inputval[0]
                let newEl=document.createElement("li")
                newEl.textContent=itemName
-               console.log(JSON.stringify(newEl))
-               console.log(parseInt(newEl))
+               console.log(inputval)
+               console.log(itemId)
                
                newEl.addEventListener("click",function(){
                   console.log(JSON.stringify(newEl)+"--1")
